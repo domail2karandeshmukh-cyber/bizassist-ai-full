@@ -211,9 +211,12 @@ function downloadPDF() {
     <main className="min-h-screen bg-slate-100 px-6 py-10 text-slate-900">
       <section className="mx-auto max-w-6xl">
         <header className="mb-8 flex items-center gap-4">
-          <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-blue-600 text-2xl font-bold text-white shadow">
-            BA
-          </div>
+          <img
+  src="/bizassist-logo.png"
+  alt="BizAssist AI Solutions logo"
+  className="h-20 w-auto rounded-2xl"
+/>
+
           <div>
             <h1 className="text-4xl font-bold">BizAssist AI Assistant</h1>
             <p className="mt-2 text-slate-600">
