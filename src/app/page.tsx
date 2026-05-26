@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import jsPDF from "jspdf";
 
 
@@ -52,6 +52,18 @@ export default function Home() {
   const [items, setItems] = useState<QuoteItem[]>([]);
   const [total, setTotal] = useState(0);
   const [history, setHistory] = useState<QuoteHistory[]>([]);
+
+  useEffect(() => {
+  const savedHistory = localStorage.getItem("quotationHistory");
+
+  if (savedHistory) {
+    setHistory(JSON.parse(savedHistory));
+  }
+}, []);
+
+useEffect(() => {
+  localStorage.setItem("quotationHistory", JSON.stringify(history));
+}, [history]);
 
 
   function findQuantity(text: string, keyword: string) {
