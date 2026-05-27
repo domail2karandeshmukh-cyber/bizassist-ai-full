@@ -1,26 +1,78 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --navy-950: #060a1f;
+  --navy-900: #0a0f2c;
+  --navy-800: #111838;
+  --navy-700: #1a2350;
+  --blue-500: #3b82f6;
+  --blue-400: #60a5fa;
+  --cyan-400: #22d3ee;
+  --cyan-300: #67e8f9;
+  --emerald-500: #10b981;
+  --emerald-400: #34d399;
+  --violet-400: #a78bfa;
+  --violet-500: #8b5cf6;
+  --amber-400: #fbbf24;
+  --slate-50: #f8fafc;
+  --slate-100: #f1f5f9;
+  --slate-200: #e2e8f0;
+  --slate-300: #cbd5e1;
+  --slate-400: #94a3b8;
+  --slate-500: #64748b;
+  --slate-600: #475569;
+  --slate-700: #334155;
+  --slate-800: #1e293b;
+  --slate-900: #0f172a;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-manrope), system-ui, -apple-system, sans-serif;
+  color: var(--slate-700);
+  background: #ffffff;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: var(--font-bricolage), var(--font-manrope), sans-serif;
+  color: var(--slate-900);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* Hide scrollbars on chat for cleaner look but keep functional */
+.chat-messages::-webkit-scrollbar,
+.activity-list::-webkit-scrollbar,
+.output-panel::-webkit-scrollbar {
+  width: 6px;
+}
+.chat-messages::-webkit-scrollbar-thumb,
+.activity-list::-webkit-scrollbar-thumb,
+.output-panel::-webkit-scrollbar-thumb {
+  background: var(--slate-300);
+  border-radius: 3px;
+}
+.chat-messages::-webkit-scrollbar-track,
+.activity-list::-webkit-scrollbar-track,
+.output-panel::-webkit-scrollbar-track {
+  background: transparent;
 }
